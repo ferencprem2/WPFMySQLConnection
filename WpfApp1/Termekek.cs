@@ -28,6 +28,11 @@ namespace WpfAppSQLTermekek
             return $"{product.category};{product.manifacturer};{product.name};{product.price};{product.warranty}";
         }
 
+        public String ToCSVString()
+        {
+            return $"{this.category};{this.manifacturer};{this.name};{this.price};{this.warranty}";
+        }
+
 
         public string Category { get => category; set => category = value; }
         public string Manifacturer { get => manifacturer; set => manifacturer = value; }

@@ -163,24 +163,11 @@ namespace WpfAppSQLTermekek
             reader.Close();
             dgProducts.Items.Refresh();
         }
-        private List<string> Convert(List<Products> prodList)
-        {
-            List<string> stringList = new();
-
-            foreach (var item in prodList)
-            {
-                stringList.Add(item.ToString());
-            }
-
-            return stringList;
-        }
-
-
         private void SaveToFile(object sender, RoutedEventArgs e)
         {
             if (saveFileDialog.ShowDialog() == true)
             {
-                File.WriteAllLines(saveFileDialog.FileName, Convert(productList));
+                File.WriteAllLines(saveFileDialog.FileName, ToCSVString(productList));
 
             }
         }
